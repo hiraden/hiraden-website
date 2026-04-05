@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>平山電設株式会社｜ひらでん｜徳島の電気工事30年以上の実績</title>
+<meta name="description" content="徳島県の電気工事は平山電設株式会社（ひらでん）へ。電気工事歴30年以上。住宅・法人・工場まで対応。明朗会計・LINEで気軽に相談OK。">
+<style>
+/* =============================================
+   RESET & BASE
+============================================= */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic','Meiryo',sans-serif;color:#1a1a2e;line-height:1.7;overflow-x:hidden;background:#fff}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* =============================================
+   DESIGN TOKENS
+============================================= */
+:root{
+  --navy-deep:#060e1e;
+  --navy:#0d1f3c;
+  --navy-mid:#122d54;
+  --navy-light:#1a3f6f;
+  --orange:#f47c20;
+  --orange-bright:#ff8c2f;
+  --gold:#ffc93c;
+  --white:#ffffff;
+  --off-white:#f7f8fc;
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-300:#d1d5db;
+  --gray-500:#6b7280;
+  --gray-700:#374151;
+  --gray-900:#111827;
+  --line-green:#06c755;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.06);
+  --shadow-md:0 8px 32px rgba(0,0,0,.10);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+  --shadow-xl:0 40px 80px rgba(0,0,0,.20);
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+
+/* =============================================
+   SCROLL ANIMATIONS
+============================================= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
+
+/* =============================================
+   HEADER
+============================================= */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  transition:var(--transition);
+}
+#header.scrolled{
+  background:rgba(6,14,30,.95);
+  backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(255,255,255,.08);
+}
+.header-announcement{
+  background:linear-gradient(90deg,var(--orange),#e55a00);
+  text-align:center;padding:8px 20px;
+  font-size:13px;color:#fff;font-weight:600;letter-spacing:.04em;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.header-announcement a{color:#ffe4cc;border-bottom:1px solid rgba(255,255,255,.4);transition:var(--transition)}
+.header-announcement a:hover{color:#fff}
+nav.navbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-logo-icon{
+  width:46px;height:46px;
+  background:linear-gradient(135deg,var(--orange),#e55a00);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;color:#fff;
+  letter-spacing:-.5px;line-height:1.1;text-align:center;
+  box-shadow:0 4px 16px rgba(244,124,32,.4);
+}
+.nav-logo-texts .ja{font-size:16px;font-weight:800;color:#fff;letter-spacing:.03em}
+.nav-logo-texts .en{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase}
+.nav-menu{display:flex;gap:32px}
+.nav-menu a{
+  font-size:13.5px;font-weight:600;color:rgba(255,255,255,.75);
+  letter-spacing:.04em;transition:var(--transition);position:relative;padding:4px 0;
+}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--orange);transform:scaleX(0);transition:var(--transition);transform-origin:left;
+}
+.nav-menu a:hover{color:#fff}
+.nav-menu a:hover::after{transform:scaleX(1)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.nav-btn-line{
+  display:flex;align-items:center;gap:7px;
+  background:var(--line-green);color:#fff;
+  padding:10px 20px;border-radius:var(--radius-sm);
+  font-size:13px;font-weight:700;
+  box-shadow:0 4px 16px rgba(6,199,85,.35);
+  transition:var(--transition);
+}
+.nav-btn-line:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,199,85,.5)}
+.nav-btn-cta{
+  display:flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,var(--orange),#e55a00);
+  color:#fff;padding:10px 20px;border-radius:var(--radius-sm);
+  font-size:13px;font-weight:700;
+  box-shadow:0 4px 16px rgba(244,124,32,.4);
+  transition:var(--transition);
+}
+.nav-btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(244,124,32,.55)}
+
+/* =============================================
+   HERO
+============================================= */
+.hero{
+  min-height:100vh;
+  background:var(--navy-deep);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding-top:112px;
+}
+/* 電気的なグリッドパターン背景 */
+.hero-grid-bg{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at 50% 50%,black 20%,transparent 80%);
+}
+/* グロー効果 */
+.hero-glow-1{
+  position:absolute;top:-20%;right:-10%;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(244,124,32,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-glow-2{
+  position:absolute;bottom:-20%;left:-10%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(26,63,111,.6) 0%,transparent 70%);
+  pointer-events:none;
+}
+/* 稲妻装飾 */
+.hero-bolt{
+  position:absolute;right:6%;top:50%;transform:translateY(-50%);
+  font-size:420px;color:rgba(244,124,32,.04);
+  pointer-events:none;line-height:1;user-select:none;
+  animation:bolt-pulse 4s ease-in-out infinite;
+}
+@keyframes bolt-pulse{0%,100%{opacity:.04}50%{opacity:.07}}
+
+.hero-inner{
+  max-width:1260px;margin:0 auto;padding:0 48px 80px;
+  display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:center;
+  position:relative;z-index:1;width:100%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(244,124,32,.12);border:1px solid rgba(244,124,32,.3);
+  color:var(--orange-bright);padding:7px 18px;border-radius:999px;
+  font-size:12.5px;font-weight:700;letter-spacing:.06em;margin-bottom:28px;
+}
+.hero-eyebrow .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--orange);
+  animation:blink 1.5s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-headline{
+  font-size:clamp(36px,4.5vw,58px);font-weight:900;
+  color:#fff;line-height:1.2;letter-spacing:-.01em;margin-bottom:12px;
+}
+.hero-headline .accent{
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:inline;
+}
+.hero-sub-headline{
+  font-size:clamp(18px,2vw,24px);font-weight:700;color:rgba(255,255,255,.7);
+  margin-bottom:28px;line-height:1.5;
+}
+.hero-body{
+  font-size:15px;color:rgba(255,255,255,.6);line-height:2;margin-bottom:40px;max-width:520px;
+}
+.hero-cta-group{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.btn-hero-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  color:#fff;padding:18px 36px;border-radius:var(--radius-sm);
+  font-size:16px;font-weight:800;letter-spacing:.02em;
+  box-shadow:0 8px 32px rgba(244,124,32,.5);
+  transition:var(--transition);position:relative;overflow:hidden;
+}
+.btn-hero-primary::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);
+  transform:translateX(-100%);transition:.4s ease;
+}
+.btn-hero-primary:hover::before{transform:translateX(0)}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(244,124,32,.6)}
+.btn-hero-line{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);
+  color:#fff;padding:18px 36px;border-radius:var(--radius-sm);
+  font-size:16px;font-weight:700;
+  transition:var(--transition);backdrop-filter:blur(10px);
+}
+.btn-hero-line:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
+.hero-stats{
+  display:flex;gap:0;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-md);overflow:hidden;
+  background:rgba(255,255,255,.04);backdrop-filter:blur(10px);
+}
+.hero-stat{
+  flex:1;padding:20px 24px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.hero-stat:last-child{border-right:none}
+.hero-stat .num{
+  font-size:36px;font-weight:900;
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.1;display:block;
+}
+.hero-stat .label{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:.04em}
+
+/* ヒーロー右側ビジュアルエリア */
+.hero-visual{display:flex;flex-direction:column;gap:16px}
+.hero-photo-main{
+  background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-lg);
+  height:300px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  position:relative;overflow:hidden;
+}
+.hero-photo-main::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(244,124,32,.06),transparent);
+}
+.photo-placeholder-icon{font-size:52px;position:relative;z-index:1}
+.photo-placeholder-text{
+  font-size:13px;color:rgba(255,255,255,.4);text-align:center;line-height:1.7;position:relative;z-index:1;
+}
+.photo-guide-tag{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  background:rgba(244,124,32,.2);border:1px solid rgba(244,124,32,.4);
+  color:var(--orange-bright);font-size:11px;font-weight:700;
+  padding:5px 14px;border-radius:999px;white-space:nowrap;z-index:1;
+}
+.hero-photo-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-photo-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-md);padding:20px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:12px;color:rgba(255,255,255,.4);text-align:center;
+}
+.hero-photo-card .ci{font-size:28px}
+
+/* スクロールインジケーター */
+.scroll-indicator{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(255,255,255,.35);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.scroll-mouse{
+  width:24px;height:38px;border:2px solid rgba(255,255,255,.25);border-radius:999px;
+  display:flex;justify-content:center;padding-top:6px;
+}
+.scroll-wheel{
+  width:3px;height:8px;background:rgba(255,255,255,.5);border-radius:999px;
+  animation:scroll-anim 2s ease-in-out infinite;
+}
+@keyframes scroll-anim{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(12px)}}
+
+/* =============================================
+   TRUST BAR
+============================================= */
+.trust-bar{
+  background:linear-gradient(90deg,var(--navy-deep),var(--navy-mid),var(--navy-deep));
+  padding:20px 48px;
+  display:flex;align-items:center;justify-content:center;gap:48px;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;
+  color:rgba(255,255,255,.65);font-size:13px;font-weight:600;letter-spacing:.03em;
+}
+.trust-item .icon{font-size:18px}
+.trust-divider{width:1px;height:24px;background:rgba(255,255,255,.1)}
+
+/* =============================================
+   SECTION COMMON
+============================================= */
+.section{padding:100px 48px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:64px}
+.section-header.center{text-align:center}
+.section-header.center .section-desc{margin:0 auto}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:800;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
+.section-eyebrow::before{
+  content:'';display:block;width:24px;height:2px;
+  background:linear-gradient(90deg,var(--orange),var(--gold));border-radius:999px;
+}
+.section-title{
+  font-size:clamp(28px,3vw,42px);font-weight:900;
+  color:var(--navy);line-height:1.25;letter-spacing:-.01em;margin-bottom:16px;
+}
+.section-title .accent{color:var(--orange)}
+.section-title.white{color:#fff}
+.section-desc{
+  font-size:15.5px;color:var(--gray-500);line-height:1.9;max-width:580px;
+}
+.section-desc.white{color:rgba(255,255,255,.65)}
+
+/* =============================================
+   REASONS
+============================================= */
+.reasons{background:var(--off-white)}
+.reasons-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.reason-card{
+  background:#fff;border-radius:var(--radius-md);padding:40px 32px;
+  box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,.04);
+  transition:var(--transition);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.reason-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--orange),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:.4s ease;
+}
+.reason-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.reason-card:hover::after{transform:scaleX(1)}
+.reason-number{
+  font-size:72px;font-weight:900;line-height:1;
+  background:linear-gradient(135deg,rgba(244,124,32,.1),rgba(255,201,60,.05));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  position:absolute;top:16px;right:20px;
+}
+.reason-icon-wrap{
+  width:60px;height:60px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,rgba(244,124,32,.1),rgba(255,201,60,.08));
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;margin-bottom:20px;
+}
+.reason-card h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.4}
+.reason-card p{font-size:14px;color:var(--gray-500);line-height:1.9;flex:1}
+
+/* =============================================
+   SERVICES
+============================================= */
+.services{background:#fff}
+.services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.service-card{
+  border:1.5px solid var(--gray-100);border-radius:var(--radius-md);
+  padding:32px 22px;text-align:center;transition:var(--transition);
+  background:#fff;cursor:pointer;position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(244,124,32,.04),rgba(255,201,60,.02));
+  opacity:0;transition:.3s;
+}
+.service-card:hover{
+  border-color:var(--orange);
+  box-shadow:0 12px 40px rgba(244,124,32,.15);
+  transform:translateY(-4px);
+}
+.service-card:hover::before{opacity:1}
+.service-card-icon{
+  width:68px;height:68px;border-radius:var(--radius-md);margin:0 auto 18px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;align-items:center;justify-content:center;font-size:30px;
+  transition:var(--transition);box-shadow:0 4px 16px rgba(13,31,60,.2);
+}
+.service-card:hover .service-card-icon{
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  box-shadow:0 8px 24px rgba(244,124,32,.4);
+}
+.service-card h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.service-card p{font-size:12.5px;color:var(--gray-500);line-height:1.75}
+.service-price{
+  margin-top:14px;font-size:12.5px;font-weight:700;
+  color:var(--orange);display:inline-flex;align-items:center;gap:4px;
+  background:rgba(244,124,32,.08);padding:4px 12px;border-radius:999px;
+}
+
+/* =============================================
+   WORKS
+============================================= */
+.works{
+  background:var(--navy-deep);
+  position:relative;overflow:hidden;
+}
+.works::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.works-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.work-card{
+  border-radius:var(--radius-md);overflow:hidden;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  transition:var(--transition);
+}
+.work-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(0,0,0,.4);
+  border-color:rgba(244,124,32,.3);
+}
+.work-img{
+  height:220px;
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;position:relative;overflow:hidden;
+}
+.work-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(6,14,30,.8));
+}
+.work-img-icon{font-size:44px;position:relative;z-index:1}
+.work-img-hint{
+  font-size:12px;color:rgba(255,255,255,.4);
+  text-align:center;line-height:1.7;position:relative;z-index:1;
+}
+.work-photo-badge{
+  position:absolute;top:12px;right:12px;z-index:2;
+  background:rgba(244,124,32,.25);border:1px solid rgba(244,124,32,.5);
+  color:var(--gold);font-size:10px;font-weight:700;
+  padding:4px 10px;border-radius:999px;
+}
+.work-info{padding:22px 24px}
+.work-tag{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(244,124,32,.12);color:var(--orange-bright);
+  font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;
+  margin-bottom:10px;
+}
+.work-info h4{font-size:16.5px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.35}
+.work-info p{font-size:12.5px;color:rgba(255,255,255,.5)}
+.works-footer{
+  display:flex;justify-content:center;align-items:center;
+  margin-top:52px;
+}
+.btn-outline-white{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1.5px solid rgba(255,255,255,.25);color:#fff;
+  padding:16px 40px;border-radius:var(--radius-sm);
+  font-size:15px;font-weight:700;transition:var(--transition);
+  backdrop-filter:blur(10px);background:rgba(255,255,255,.04);
+}
+.btn-outline-white:hover{
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.5);
+  transform:translateY(-3px);
+}
+
+/* =============================================
+   TOOLS (ひらでんツール)
+============================================= */
+.tools{background:var(--off-white)}
+.tools-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.tools-visual{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  border-radius:var(--radius-xl);
+  aspect-ratio:4/3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.tools-visual::before{
+  content:'';position:absolute;
+  top:-40%;right:-40%;width:80%;height:80%;
+  background:radial-gradient(circle,rgba(244,124,32,.15),transparent);
+}
+.tools-visual-icon{font-size:72px;position:relative;z-index:1}
+.tools-visual-hint{
+  font-size:13px;color:rgba(255,255,255,.4);text-align:center;
+  line-height:1.8;position:relative;z-index:1;
+}
+.tools-badge{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  background:rgba(244,124,32,.2);border:1px solid rgba(244,124,32,.4);
+  color:var(--orange-bright);font-size:11px;font-weight:700;
+  padding:6px 18px;border-radius:999px;white-space:nowrap;z-index:1;
+}
+.tools-content .section-header{margin-bottom:28px}
+.tools-list{margin:28px 0}
+.tools-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--gray-100);
+}
+.tools-item:last-child{border-bottom:none}
+.tools-item-check{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;margin-top:1px;
+}
+.tools-item-text h5{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.tools-item-text p{font-size:13px;color:var(--gray-500);line-height:1.7}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:#fff;padding:16px 32px;border-radius:var(--radius-sm);
+  font-size:15px;font-weight:700;transition:var(--transition);
+  box-shadow:0 8px 24px rgba(13,31,60,.25);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(13,31,60,.35)}
+.btn-primary.orange{
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  box-shadow:0 8px 24px rgba(244,124,32,.35);
+}
+.btn-primary.orange:hover{box-shadow:0 16px 40px rgba(244,124,32,.5)}
+
+/* =============================================
+   PROTEIN
+============================================= */
+.protein{
+  background:linear-gradient(160deg,#0a0a1a 0%,#0d1f3c 40%,#0f2742 100%);
+  position:relative;overflow:hidden;
+}
+.protein::before{
+  content:'';position:absolute;
+  top:0;right:0;width:50%;height:100%;
+  background:radial-gradient(ellipse at right center,rgba(244,124,32,.08),transparent 70%);
+}
+.protein-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  position:relative;z-index:1;
+}
+.protein-visual{
+  background:linear-gradient(135deg,rgba(244,124,32,.12),rgba(255,201,60,.06));
+  border:1px solid rgba(244,124,32,.2);
+  border-radius:var(--radius-xl);
+  aspect-ratio:3/4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;position:relative;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,.4);
+}
+.protein-visual-icon{font-size:80px;position:relative;z-index:1}
+.protein-visual-hint{
+  font-size:13px;color:rgba(255,255,255,.4);text-align:center;
+  line-height:1.8;position:relative;z-index:1;
+}
+.protein-photo-tip{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  background:rgba(244,124,32,.2);border:1px solid rgba(244,124,32,.4);
+  color:var(--gold);font-size:11px;font-weight:700;
+  padding:6px 16px;border-radius:999px;white-space:nowrap;
+}
+.protein-story{
+  background:rgba(255,255,255,.04);border-left:3px solid var(--orange);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:24px 28px;margin:28px 0;
+  font-size:15px;color:rgba(255,255,255,.75);
+  line-height:2;font-style:italic;
+}
+.protein-story strong{color:var(--orange);font-style:normal}
+.protein-story .author{
+  font-style:normal;font-size:13px;
+  color:rgba(255,255,255,.4);margin-top:10px;display:block;
+}
+.protein-feats{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;
+}
+.protein-feat{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-sm);padding:18px 16px;
+  display:flex;align-items:center;gap:12px;
+  transition:var(--transition);
+}
+.protein-feat:hover{
+  background:rgba(244,124,32,.08);border-color:rgba(244,124,32,.25);
+  transform:translateY(-2px);
+}
+.protein-feat .fi{font-size:22px}
+.protein-feat-text h5{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.protein-feat-text p{font-size:11.5px;color:rgba(255,255,255,.5)}
+
+/* =============================================
+   SNS
+============================================= */
+.sns{background:#fff}
+.sns-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.sns-card{
+  border-radius:var(--radius-md);overflow:hidden;
+  position:relative;cursor:pointer;
+  transition:var(--transition);
+}
+.sns-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.sns-card-bg{
+  padding:40px 28px 32px;
+  display:flex;flex-direction:column;gap:12px;
+  position:relative;overflow:hidden;
+  min-height:220px;
+}
+.sns-card-bg::before{
+  content:'';position:absolute;
+  top:-30%;right:-30%;width:80%;height:80%;
+  background:radial-gradient(circle,rgba(255,255,255,.12),transparent);
+}
+.sns-youtube .sns-card-bg{background:linear-gradient(150deg,#ff0000,#990000)}
+.sns-tiktok .sns-card-bg{background:linear-gradient(150deg,#1a1a1a,#333)}
+.sns-line .sns-card-bg{background:linear-gradient(150deg,#06c755,#038740)}
+.sns-blog .sns-card-bg{background:linear-gradient(150deg,var(--navy),var(--navy-light))}
+.sns-card-icon{font-size:44px;position:relative;z-index:1}
+.sns-card h4{font-size:20px;font-weight:900;color:#fff;position:relative;z-index:1}
+.sns-card p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.7;position:relative;z-index:1;flex:1}
+.sns-handle{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.15);color:#fff;
+  font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;
+  position:relative;z-index:1;width:fit-content;
+  transition:var(--transition);
+}
+.sns-card:hover .sns-handle{background:rgba(255,255,255,.25)}
+
+/* =============================================
+   TESTIMONIALS
+============================================= */
+.testimonials{background:var(--off-white)}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.testi-card{
+  background:#fff;border-radius:var(--radius-md);padding:36px 30px;
+  box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,.04);
+  transition:var(--transition);position:relative;
+}
+.testi-card::before{
+  content:'\201C';
+  font-size:80px;font-weight:900;
+  color:rgba(244,124,32,.08);
+  position:absolute;top:12px;right:20px;line-height:1;
+  font-family:Georgia,serif;
+}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.testi-stars{
+  display:flex;gap:3px;margin-bottom:16px;
+}
+.star{
+  width:18px;height:18px;
+  background:linear-gradient(135deg,#f59e0b,#f97316);
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+.testi-text{
+  font-size:14.5px;color:var(--gray-700);line-height:1.95;
+  margin-bottom:22px;
+}
+.testi-from{display:flex;align-items:center;gap:12px}
+.testi-avatar{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--navy),var(--orange));
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:800;color:#fff;
+}
+.testi-name{font-size:14px;font-weight:700;color:var(--navy)}
+.testi-area{font-size:12px;color:var(--gray-500)}
+
+/* =============================================
+   FAQ
+============================================= */
+.faq{background:#fff}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{
+  border:1.5px solid var(--gray-100);border-radius:var(--radius-md);
+  margin-bottom:12px;overflow:hidden;transition:var(--transition);
+}
+.faq-item:hover{border-color:rgba(244,124,32,.3)}
+.faq-q{
+  display:flex;align-items:center;gap:16px;
+  padding:22px 26px;cursor:pointer;
+  font-size:15.5px;font-weight:700;color:var(--navy);
+  background:#fff;transition:var(--transition);
+}
+.faq-q:hover{background:var(--gray-50)}
+.faq-q-num{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  color:#fff;font-size:14px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(244,124,32,.35);
+}
+.faq-q-text{flex:1}
+.faq-a{
+  padding:0 26px 22px 74px;
+  font-size:14.5px;color:var(--gray-500);line-height:1.95;background:#fff;
+}
+
+/* =============================================
+   COVERAGE
+============================================= */
+.coverage{
+  background:linear-gradient(135deg,var(--navy-deep),var(--navy));
+  padding:72px 48px;
+}
+.coverage-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;
+}
+.coverage-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.area-tag{
+  padding:12px 24px;border-radius:999px;
+  font-size:14px;font-weight:700;transition:var(--transition);
+}
+.area-tag.main{
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  color:#fff;box-shadow:0 4px 16px rgba(244,124,32,.4);
+}
+.area-tag.sub{
+  background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);
+}
+.area-tag:hover{transform:translateY(-2px)}
+.coverage-cta{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius-md);padding:36px 32px;text-align:center;min-width:240px;
+}
+.coverage-cta p{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:20px;line-height:1.7}
+
+/* =============================================
+   CONTACT
+============================================= */
+.contact{
+  background:var(--navy-deep);
+  position:relative;overflow:hidden;
+}
+.contact::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  margin-top:56px;position:relative;z-index:1;
+}
+.contact-left{display:flex;flex-direction:column;gap:20px}
+.contact-option{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--radius-md);padding:32px;
+  transition:var(--transition);
+}
+.contact-option:hover{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(244,124,32,.3);
+  transform:translateY(-3px);
+}
+.contact-option-icon{font-size:36px;margin-bottom:12px}
+.contact-option h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.contact-option p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:20px}
+.btn-line-contact{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--line-green);color:#fff;
+  padding:14px 28px;border-radius:var(--radius-sm);
+  font-size:15px;font-weight:700;width:100%;justify-content:center;
+  box-shadow:0 4px 20px rgba(6,199,85,.4);transition:var(--transition);
+}
+.btn-line-contact:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(6,199,85,.55)}
+.contact-phone-num{
+  font-size:32px;font-weight:900;
+  background:linear-gradient(135deg,var(--orange),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin:8px 0;
+}
+.contact-phone-hours{font-size:12px;color:rgba(255,255,255,.4)}
+.contact-form-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-md);padding:40px;
+}
+.contact-form-card h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
+.contact-form-card p{font-size:13.5px;color:rgba(255,255,255,.5);margin-bottom:28px}
+.form-grid{display:flex;flex-direction:column;gap:14px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f-input,.f-select,.f-textarea{
+  width:100%;background:rgba(255,255,255,.06);
+  border:1.5px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-sm);padding:14px 18px;
+  color:#fff;font-size:14px;outline:none;
+  transition:var(--transition);font-family:inherit;
+}
+.f-input::placeholder,.f-textarea::placeholder{color:rgba(255,255,255,.3)}
+.f-input:focus,.f-textarea:focus{
+  border-color:var(--orange);background:rgba(244,124,32,.06);
+}
+.f-select{color:rgba(255,255,255,.5);cursor:pointer}
+.f-select option{background:#0d1f3c;color:#fff}
+.f-textarea{height:110px;resize:vertical}
+.form-submit{
+  width:100%;padding:16px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--orange),#e05500);
+  color:#fff;font-size:16px;font-weight:800;
+  box-shadow:0 8px 24px rgba(244,124,32,.4);
+  transition:var(--transition);position:relative;overflow:hidden;
+}
+.form-submit::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);
+  transform:translateX(-100%);transition:.4s;
+}
+.form-submit:hover::before{transform:translateX(0)}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(244,124,32,.55)}
+
+/* =============================================
+   PROFILE
+============================================= */
+.profile{background:var(--off-white)}
+.profile-layout{
+  display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:center;
+}
+.profile-photo{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  border-radius:var(--radius-xl);
+  aspect-ratio:3/4;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.profile-photo-icon{font-size:64px;position:relative;z-index:1}
+.profile-photo-hint{
+  font-size:13px;color:rgba(255,255,255,.4);
+  text-align:center;line-height:1.7;position:relative;z-index:1;
+}
+.profile-photo-badge{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  background:rgba(244,124,32,.2);border:1px solid rgba(244,124,32,.4);
+  color:var(--orange-bright);font-size:11px;font-weight:700;
+  padding:6px 18px;border-radius:999px;white-space:nowrap;z-index:1;
+}
+.profile-name{font-size:36px;font-weight:900;color:var(--navy);margin-bottom:4px}
+.profile-ruby{font-size:14px;color:var(--gray-500);margin-bottom:24px;letter-spacing:.08em}
+.profile-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.profile-tag{
+  background:var(--navy);color:#fff;
+  font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;
+}
+.profile-text{font-size:15px;color:var(--gray-700);line-height:2;margin-bottom:28px}
+.profile-certs{display:flex;flex-direction:column;gap:10px}
+.profile-cert{
+  display:flex;align-items:center;gap:12px;
+  background:#fff;border:1px solid var(--gray-100);
+  border-radius:var(--radius-sm);padding:14px 18px;
+  font-size:14px;font-weight:600;color:var(--navy);
+  box-shadow:var(--shadow-sm);
+}
+.cert-icon{font-size:20px}
+
+/* =============================================
+   FOOTER
+============================================= */
+footer{background:#040c18;padding:72px 48px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:56px;
+  margin-bottom:56px;
+  padding-bottom:56px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.footer-brand .name{font-size:22px;font-weight:900;color:#fff;margin-bottom:2px}
+.footer-brand .en{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
+.footer-brand p{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.9;margin-bottom:24px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{
+  width:36px;height:36px;border-radius:var(--radius-sm);
+  background:rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;transition:var(--transition);
+}
+.footer-social a:hover{background:var(--orange);transform:translateY(-2px)}
+.footer-col h4{
+  font-size:13px;font-weight:800;color:#fff;
+  letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:20px;padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul a{
+  font-size:13.5px;color:rgba(255,255,255,.45);
+  transition:var(--transition);display:flex;align-items:center;gap:6px;
+}
+.footer-col ul a:hover{color:var(--orange);padding-left:4px}
+.footer-col ul a::before{content:'›';opacity:.5}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:rgba(255,255,255,.3);
+}
+.footer-bottom-links{display:flex;gap:24px}
+.footer-bottom-links a{color:rgba(255,255,255,.3);transition:var(--transition)}
+.footer-bottom-links a:hover{color:rgba(255,255,255,.6)}
+
+/* =============================================
+   LINE FLOAT BUTTON
+============================================= */
+.float-line{
+  position:fixed;bottom:28px;right:28px;z-index:9999;
+  background:var(--line-green);color:#fff;
+  padding:15px 24px;border-radius:999px;
+  font-size:15px;font-weight:800;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(6,199,85,.5);
+  transition:var(--transition);
+}
+.float-line:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 16px 48px rgba(6,199,85,.6)}
+.float-line-pulse{
+  width:10px;height:10px;border-radius:50%;background:#fff;
+  animation:pulse-ring 1.8s ease infinite;flex-shrink:0;
+}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+
+/* =============================================
+   DIVIDER WAVE
+============================================= */
+.wave-divider{line-height:0;overflow:hidden}
+.wave-divider svg{display:block;width:100%}
+
+</style>
+</head>
+<body>
+
+<!-- ========== LINE FLOAT ========== -->
+<a href="#" class="float-line">
+  <div class="float-line-pulse"></div>
+  💬 LINEで無料相談
+</a>
+
+<!-- ========== HEADER ========== -->
+<header id="header">
+  <div class="header-announcement">
+    <span>⚡ 徳島県・四国エリアの電気工事なら「ひらでん」へ。LINEで写真を送るだけで即見積もり！</span>
+    <a href="#">👉 LINE相談はこちら</a>
+  </div>
+  <nav class="navbar">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">ひ<br>電</div>
+      <div class="nav-logo-texts">
+        <div class="ja">平山電設株式会社</div>
+        <div class="en">HIRADEN / ひらでん</div>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#services">サービス</a></li>
+      <li><a href="#works">施工実績</a></li>
+      <li><a href="#tools">ひらでんツール</a></li>
+      <li><a href="#protein">プロテイン</a></li>
+      <li><a href="#voice">お客様の声</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-btn-line">💬 LINE相談</a>
+      <a href="#contact" class="nav-btn-cta">📋 無料見積もり</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-bolt">⚡</div>
+
+  <div class="hero-inner">
+    <!-- 左：テキスト -->
+    <div>
+      <div class="hero-eyebrow">
+        <div class="dot"></div>
+        電気工事歴30年以上のプロフェッショナル
+      </div>
+      <h1 class="hero-headline">
+        徳島・四国の<br>
+        <span class="accent">電気工事</span>なら<br>
+        ひらでんへ。
+      </h1>
+      <p class="hero-sub-headline">
+        安心・丁寧・明朗会計。<br>LINEで気軽に相談できる電気屋です。
+      </p>
+      <p class="hero-body">
+        一般住宅から工場・店舗まで、あらゆる電気工事に対応。<br>
+        徳島県を中心に、香川・愛媛・高知・兵庫県まで広域対応。<br>
+        見積もりは無料。追加料金なしの明朗会計でご安心ください。
+      </p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-hero-primary">
+          📋 無料見積もりを依頼する →
+        </a>
+        <a href="#" class="btn-hero-line">
+          💬 LINEで相談する
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num">30<span style="font-size:20px">年</span></span>
+          <div class="label">電気工事歴</div>
+        </div>
+        <div class="hero-stat">
+          <span class="num" data-count="true">●●<span style="font-size:20px">件</span></span>
+          <div class="label">施工実績</div>
+        </div>
+        <div class="hero-stat">
+          <span class="num">5<span style="font-size:20px">県</span></span>
+          <div class="label">対応エリア</div>
+        </div>
+        <div class="hero-stat">
+          <span class="num">★5.0</span>
+          <div class="label">Google評価</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右：ビジュアル -->
+    <div class="hero-visual">
+      <div class="hero-photo-main">
+        <div class="photo-placeholder-icon">📸</div>
+        <div class="photo-placeholder-text">
+          【メイン写真①】<br>
+          代表・平山さんの顔写真<br>
+          <span style="font-size:11px;opacity:.7">制服＋ヘルメット姿・現場バックがベスト</span>
+        </div>
+        <div class="photo-guide-tag">📷 撮影ガイド：自信に満ちた笑顔で！</div>
+      </div>
+      <div class="hero-photo-cards">
+        <div class="hero-photo-card">
+          <div class="ci">🔌</div>
+          <div>【写真②】<br>施工ビフォー</div>
+        </div>
+        <div class="hero-photo-card">
+          <div class="ci">✨</div>
+          <div>【写真③】<br>施工アフター</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ========== TRUST BAR ========== -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">⚡</span>電気工事歴30年以上</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="icon">🔍</span>明朗会計・追加料金なし</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="icon">💬</span>LINEで気軽に相談OK</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="icon">📋</span>見積もり無料</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="icon">🗺️</span>徳島県・四国・兵庫県対応</div>
+</div>
+
+<!-- ========== REASONS ========== -->
+<section class="section reasons">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">WHY CHOOSE US</div>
+      <h2 class="section-title">ひらでんが<span class="accent">選ばれる理由</span></h2>
+      <p class="section-desc">30年以上の経験と、お客様ファーストの姿勢で、本当に満足してもらえる電気工事を届けます。</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card reveal delay-1">
+        <div class="reason-number">01</div>
+        <div class="reason-icon-wrap">🔍</div>
+        <h3>明朗会計・<br>追加料金なし</h3>
+        <p>見積もりは項目ごとに詳細明示。現場での追加料金は原則発生しません。電気工事30年のプロが「適正価格」にこだわります。</p>
+      </div>
+      <div class="reason-card reveal delay-2">
+        <div class="reason-number">02</div>
+        <div class="reason-icon-wrap">📱</div>
+        <h3>LINEで写真を送るだけ<br>で概算見積もり</h3>
+        <p>電話が苦手な方も大歓迎。写真をLINEで送るだけで概算見積もりが可能。忙しい方にも嬉しい対応です。</p>
+      </div>
+      <div class="reason-card reveal delay-3">
+        <div class="reason-number">03</div>
+        <div class="reason-icon-wrap">👤</div>
+        <h3>担当者が最初から<br>最後まで一貫対応</h3>
+        <p>下請け丸投げ一切なし。代表・平山が直接対応することで、コミュニケーションのズレなく安心の仕上がりをお約束します。</p>
+      </div>
+      <div class="reason-card reveal delay-1">
+        <div class="reason-number">04</div>
+        <div class="reason-icon-wrap">📸</div>
+        <h3>施工前後の<br>写真報告</h3>
+        <p>工事前・後の状態を写真でしっかりご報告。目に見えない電気工事だからこそ、「見える化」にこだわります。</p>
+      </div>
+      <div class="reason-card reveal delay-2">
+        <div class="reason-number">05</div>
+        <div class="reason-icon-wrap">⚡</div>
+        <h3>住宅から工場まで<br>幅広く対応</h3>
+        <p>個人のご家庭から大型工場・店舗まで対応。小さなコンセント増設から大規模電気設備工事まで、同じ情熱で取り組みます。</p>
+      </div>
+      <div class="reason-card reveal delay-3">
+        <div class="reason-number">06</div>
+        <div class="reason-icon-wrap">💪</div>
+        <h3>体のことまで考える<br>電気屋</h3>
+        <p>HERBALIFEプロテイン販売も手がける、職人の体を知る電気工事士。お客様の仕事も体も、全力でサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section services" id="services">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">SERVICES</div>
+      <h2 class="section-title">電気工事<span class="accent">サービス一覧</span></h2>
+      <p class="section-desc">住宅・店舗・工場など、あらゆる場面の電気工事に完全対応。まずはお気軽にご相談ください。</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-card-icon">🔌</div>
+        <h4>コンセント増設・移設</h4>
+        <p>タコ足配線の解消や使いやすい位置への増設・移設工事。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-card-icon">❄️</div>
+        <h4>エアコン取付・電源工事</h4>
+        <p>新設・取替え・専用コンセント工事もセットで対応。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-card-icon">💡</div>
+        <h4>照明工事・LED化</h4>
+        <p>電球交換から本格的な配線工事まで。省エネLED化も。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+      <div class="service-card reveal delay-4">
+        <div class="service-card-icon">🔋</div>
+        <h4>分電盤・ブレーカー交換</h4>
+        <p>古い分電盤の安全な交換・容量アップ工事。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-card-icon">🚗</div>
+        <h4>EV充電設備設置</h4>
+        <p>自宅・駐車場へのEV充電スタンド新設工事。補助金対応。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-card-icon">☀️</div>
+        <h4>太陽光・蓄電池工事</h4>
+        <p>太陽光パネル設置・蓄電池設置・既設システムのメンテ。</p>
+        <div class="service-price">お見積もり</div>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-card-icon">🏠</div>
+        <h4>新築・リフォーム電気工事</h4>
+        <p>新築の配線工事からリフォームに伴う電気工事まで一式。</p>
+        <div class="service-price">お見積もり</div>
+      </div>
+      <div class="service-card reveal delay-4">
+        <div class="service-card-icon">🛡️</div>
+        <h4>漏電調査・トラブル対応</h4>
+        <p>ブレーカーが落ちる・電気代が高いなどのトラブルを解決。</p>
+        <div class="service-price">目安：●〜●万円</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WORKS ========== -->
+<section class="section works" id="works">
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">WORKS</div>
+      <h2 class="section-title white">施工実績<span class="accent">ギャラリー</span></h2>
+      <p class="section-desc white">これまでの施工事例をご紹介。ビフォーアフターで仕上がりをご確認ください。</p>
+    </div>
+    <div class="works-grid">
+      <div class="work-card reveal delay-1">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真④】コンセント増設<br>ビフォーアフター写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏠 住宅</div>
+          <h4>リビングのコンセント増設工事</h4>
+          <p>📍 徳島市　⏱ 所要時間：約2時間</p>
+        </div>
+      </div>
+      <div class="work-card reveal delay-2">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真⑤】分電盤交換<br>交換前後の写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏠 住宅</div>
+          <h4>築30年分電盤まるごと交換</h4>
+          <p>📍 阿南市　⏱ 所要時間：約半日</p>
+        </div>
+      </div>
+      <div class="work-card reveal delay-3">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真⑥】店舗LED化<br>施工後の明るい店内写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏪 店舗</div>
+          <h4>飲食店 全館LED化工事</h4>
+          <p>📍 徳島市　💡 電気代50%削減</p>
+        </div>
+      </div>
+      <div class="work-card reveal delay-1">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真⑦】EV充電設備<br>設置前後の写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏠 住宅</div>
+          <h4>自宅駐車場 EV充電設備設置</h4>
+          <p>📍 徳島市　🚗 補助金活用</p>
+        </div>
+      </div>
+      <div class="work-card reveal delay-2">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真⑧】工場電気設備<br>広角で迫力ある写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏭 工場</div>
+          <h4>製造工場 電気設備改修工事</h4>
+          <p>📍 徳島県内　⚙️ 大規模改修</p>
+        </div>
+      </div>
+      <div class="work-card reveal delay-3">
+        <div class="work-img">
+          <div class="work-img-icon">📸</div>
+          <div class="work-img-hint">【写真⑨】太陽光設置<br>屋根上パネルの写真</div>
+          <div class="work-photo-badge">📷 要撮影</div>
+        </div>
+        <div class="work-info">
+          <div class="work-tag">🏠 住宅</div>
+          <h4>住宅用 太陽光パネル設置工事</h4>
+          <p>📍 香川県内　☀️ 蓄電池セット</p>
+        </div>
+      </div>
+    </div>
+    <div class="works-footer reveal">
+      <a href="#" class="btn-outline-white">施工実績をすべて見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROFILE ========== -->
+<section class="section profile" id="profile">
+  <div class="section-inner">
+    <div class="profile-layout">
+      <div class="profile-photo reveal-left">
+        <div class="profile-photo-icon">👤</div>
+        <div class="profile-photo-hint">
+          【写真⑩】代表プロフィール写真<br>
+          <span style="font-size:11px;opacity:.7">スーツ or 制服、明るい背景で</span>
+        </div>
+        <div class="profile-photo-badge">📷 正面・笑顔・清潔感が鍵！</div>
+      </div>
+      <div class="reveal-right">
+        <div class="section-eyebrow">PROFILE</div>
+        <div class="profile-name">平山 ●● （ひらやま ●●）</div>
+        <div class="profile-ruby">代表取締役 / 第二種電気工事士</div>
+        <div class="profile-tags">
+          <span class="profile-tag">電気工事歴30年以上</span>
+          <span class="profile-tag">第二種電気工事士</span>
+          <span class="profile-tag">ひらでん代表</span>
+        </div>
+        <p class="profile-text">
+          徳島生まれ、徳島育ち。電気工事一筋30年以上。<br>
+          「お客様の不安をゼロにする電気工事」をモットーに、住宅から工場・店舗まで幅広く対応してきました。<br><br>
+          YouTube「ひらでん」チャンネルでは電気工事の裏側や豆知識を発信中。
+          現場で30年体を使い続けてきた経験から、HERBALIFEプロテインの販売も行っています。<br><br>
+          LINEで気軽に相談してください。どんな小さなお悩みも、全力で対応します。
+        </p>
+        <div class="profile-certs">
+          <div class="profile-cert"><span class="cert-icon">🏆</span>第二種電気工事士</div>
+          <div class="profile-cert"><span class="cert-icon">📋</span>電気工事業 登録（徳島県）</div>
+          <div class="profile-cert"><span class="cert-icon">⭐</span>電気工事歴30年以上の実績</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TOOLS ========== -->
+<section class="section tools" id="tools">
+  <div class="section-inner">
+    <div class="tools-layout">
+      <div class="tools-visual reveal-left">
+        <div class="tools-visual-icon">📄</div>
+        <div class="tools-visual-hint">
+          【写真⑪】見積書・請求書の<br>実際の画面スクリーンショット<br>
+          <span style="font-size:11px;opacity:.6">PCまたはスマホ画面でOK</span>
+        </div>
+        <div class="tools-badge">📷 実際のツール画面を撮影</div>
+      </div>
+      <div class="reveal-right">
+        <div class="tools-content">
+          <div class="section-header" style="margin-bottom:28px">
+            <div class="section-eyebrow">HIRADEN TOOLS</div>
+            <h2 class="section-title">電気工事士が本気で作った<br><span class="accent">見積書・請求書</span></h2>
+            <p class="section-desc">30年現場に立ち続けたプロが「本当に使える」を追求した業務書類テンプレート。現場で即使えるリアルな内容です。</p>
+          </div>
+          <ul class="tools-list">
+            <li class="tools-item">
+              <div class="tools-item-check">✓</div>
+              <div class="tools-item-text">
+                <h5>電気工事に特化した項目設計</h5>
+                <p>現場で必要な工事項目がすべて網羅されたリアルな設計</p>
+              </div>
+            </li>
+            <li class="tools-item">
+              <div class="tools-item-check">✓</div>
+              <div class="tools-item-text">
+                <h5>スマホ・PCどちらでも入力できる</h5>
+                <p>現場でも事務所でも使いやすいシンプルなUI設計</p>
+              </div>
+            </li>
+            <li class="tools-item">
+              <div class="tools-item-check">✓</div>
+              <div class="tools-item-text">
+                <h5>お客様に出しやすいプロ仕様デザイン</h5>
+                <p>信頼感が伝わる、清潔感のある書類デザイン</p>
+              </div>
+            </li>
+            <li class="tools-item">
+              <div class="tools-item-check">✓</div>
+              <div class="tools-item-text">
+                <h5>現場30年の経験が詰まった内容</h5>
+                <p>「こんな項目が欲しかった」という声から生まれたリアルな書類</p>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="btn-primary orange">📥 詳しく見る・ダウンロード</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROTEIN ========== -->
+<section class="section protein" id="protein">
+  <div class="section-inner">
+    <div class="protein-layout">
+      <div class="reveal-left">
+        <div class="section-eyebrow">HERBALIFE PROTEIN</div>
+        <h2 class="section-title white">疲れた体を整える、<br><span class="accent">たった1杯</span>。</h2>
+        <div class="protein-story">
+          「30年間、毎日現場で体を使い続けてきた。<br>
+          ある日出会ったこの1杯が、<strong>翌朝の体の軽さを変えた。</strong><br>
+          現場で頑張るすべての人に届けたい。」
+          <span class="author">— 代表 平山 ●●</span>
+        </div>
+        <div class="protein-feats">
+          <div class="protein-feat">
+            <div class="fi">💪</div>
+            <div class="protein-feat-text">
+              <h5>疲労回復をサポート</h5>
+              <p>現場仕事の疲れに</p>
+            </div>
+          </div>
+          <div class="protein-feat">
+            <div class="fi">🏋️</div>
+            <div class="protein-feat-text">
+              <h5>筋肉・体づくり</h5>
+              <p>体力仕事の方に最適</p>
+            </div>
+          </div>
+          <div class="protein-feat">
+            <div class="fi">⚖️</div>
+            <div class="protein-feat-text">
+              <h5>体重・体型管理</h5>
+              <p>無理なく健康的に</p>
+            </div>
+          </div>
+          <div class="protein-feat">
+            <div class="fi">🌿</div>
+            <div class="protein-feat-text">
+              <h5>栄養バランス補給</h5>
+              <p>忙しい職人さんに</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn-primary orange" style="margin-top:8px">💬 LINEで注文・無料相談する</a>
+      </div>
+      <div class="protein-visual reveal-right">
+        <div class="protein-visual-icon">🥤</div>
+        <div class="protein-visual-hint">
+          【写真⑫】商品写真<br>または実際に飲んでいる自然な写真<br>
+          <span style="font-size:11px;opacity:.6">「いかにも広告」より自然な写真が売れます</span>
+        </div>
+        <div class="protein-photo-tip">📷 笑顔で飲んでいる写真が最強！</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SNS ========== -->
+<section class="section sns" id="sns">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-eyebrow">SNS & MEDIA</div>
+      <h2 class="section-title">ひらでんを<span class="accent">フォローする</span></h2>
+      <p class="section-desc">電気の豆知識・施工動画・プロテイン情報など、役立つ情報を毎日発信中！</p>
+    </div>
+    <div class="sns-grid">
+      <div class="sns-card sns-youtube reveal delay-1">
+        <div class="sns-card-bg">
+          <div class="sns-card-icon">▶️</div>
+          <h4>YouTube</h4>
+          <p>施工動画・電気工事の解説・プロテイン紹介などを配信中</p>
+          <div class="sns-handle">@ひらでん / HIRADEN</div>
+        </div>
+      </div>
+      <div class="sns-card sns-tiktok reveal delay-2">
+        <div class="sns-card-bg">
+          <div class="sns-card-icon">🎵</div>
+          <h4>TikTok</h4>
+          <p>短い施工シーン・電気豆知識を毎日ショート動画で配信</p>
+          <div class="sns-handle">@hiraden</div>
+        </div>
+      </div>
+      <div class="sns-card sns-line reveal delay-3">
+        <div class="sns-card-bg">
+          <div class="sns-card-icon">💬</div>
+          <h4>LINE公式</h4>
+          <p>見積もり相談・プロテイン注文はLINEが一番早くて簡単！</p>
+          <div class="sns-handle">友だち追加はこちら</div>
+        </div>
+      </div>
+      <div class="sns-card sns-blog reveal delay-4">
+        <div class="sns-card-bg">
+          <div class="sns-card-icon">📝</div>
+          <h4>ブログ・note</h4>
+          <p>電気工事の豆知識・業務ノウハウ・ひらでんツール紹介記事</p>
+          <div class="sns-handle">記事を読む</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonials" id="voice">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">CUSTOMER VOICE</div>
+      <h2 class="section-title">お客様の<span class="accent">声</span></h2>
+      <p class="section-desc">実際にご依頼いただいたお客様からいただいたリアルな声をご紹介します。</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal delay-1">
+        <div class="testi-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <p class="testi-text">急なブレーカーのトラブルでしたが、LINEで連絡したら翌日すぐに来てくれました。作業もとても丁寧で、終わった後に写真で報告してくださったのが安心できました。また何かあれば必ずお願いします。</p>
+        <div class="testi-from">
+          <div class="testi-avatar">田</div>
+          <div>
+            <div class="testi-name">田中 様</div>
+            <div class="testi-area">徳島市・個人のお客様</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-2">
+        <div class="testi-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <p class="testi-text">店舗のLED化工事をお願いしました。見積もりが明確で追加費用もなく、仕上がりも大変満足しています。店内が明るくなってお客様からも好評です。電気代も以前の半分以下になりました！</p>
+        <div class="testi-from">
+          <div class="testi-avatar">山</div>
+          <div>
+            <div class="testi-name">山本 様</div>
+            <div class="testi-area">阿南市・飲食店オーナー</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-3">
+        <div class="testi-stars">
+          <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+        </div>
+        <p class="testi-text">工場の電気設備改修をお任せしました。30年のご経験から的確なアドバイスをいただき、安心してお任せできました。毎年の定期点検もお願いしています。</p>
+        <div class="testi-from">
+          <div class="testi-avatar">鈴</div>
+          <div>
+            <div class="testi-name">鈴木 様</div>
+            <div class="testi-area">徳島市・製造業</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section faq">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">よくある<span class="accent">ご質問</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">見積もりは本当に無料ですか？</span></div>
+        <div class="faq-a">はい、見積もりは完全無料です。LINEで写真を送っていただくだけで概算見積もりも対応しております。まずはお気軽にご連絡ください。</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">対応できるエリアを教えてください。</span></div>
+        <div class="faq-a">徳島県全域をメインに、香川県・愛媛県・高知県・兵庫県にも対応しています。エリア外のご相談も、まずはお気軽にご連絡ください。</div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">急なトラブル・緊急工事にも対応してもらえますか？</span></div>
+        <div class="faq-a">はい、可能な限り迅速に対応しております。急なブレーカートラブルや漏電など、緊急のご相談はまずLINEまたはお電話でお問い合わせください。</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">個人でも法人でも依頼できますか？</span></div>
+        <div class="faq-a">はい、個人のお客様から法人・店舗・工場まで幅広くご対応しております。工事規模の大小は問いません。</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">見積もり後に追加料金が発生することはありますか？</span></div>
+        <div class="faq-a">原則として追加料金は発生しません。万が一工事中に追加作業が必要になった場合は、事前にご説明・ご確認いただいてから作業を進めます。ご安心ください。</div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <div class="faq-q"><span class="faq-q-num">Q</span><span class="faq-q-text">プロテイン（HERBALIFE）の注文方法は？</span></div>
+        <div class="faq-a">LINE公式アカウントから直接ご注文・ご相談いただけます。電気工事と同様、気軽にメッセージでお問い合わせください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COVERAGE ========== -->
+<div class="coverage">
+  <div class="coverage-inner">
+    <div class="reveal-left">
+      <div class="section-eyebrow" style="color:var(--orange)">SERVICE AREA</div>
+      <h2 class="section-title white">対応<span class="accent">エリア</span></h2>
+      <p class="section-desc white">徳島県を中心に、四国・近畿エリアに幅広く対応しています。<br>エリア外もご相談ください。</p>
+      <div class="coverage-tags">
+        <span class="area-tag main">📍 徳島県（メインエリア）</span>
+        <span class="area-tag sub">🗾 香川県</span>
+        <span class="area-tag sub">🗾 愛媛県</span>
+        <span class="area-tag sub">🗾 高知県</span>
+        <span class="area-tag sub">🗾 兵庫県</span>
+      </div>
+    </div>
+    <div class="coverage-cta reveal-right">
+      <div style="font-size:40px;margin-bottom:12px">📞</div>
+      <p>エリアのご確認・<br>出張費についてはお気軽に<br>お問い合わせください</p>
+      <a href="#contact" class="btn-primary orange" style="width:100%;justify-content:center">お問い合わせ →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">CONTACT</div>
+      <h2 class="section-title white">お問い合わせ・<span class="accent">無料見積もり</span></h2>
+      <p class="section-desc white">どんな小さなご相談でも歓迎です。LINEで写真を送るだけで即対応します。</p>
+    </div>
+    <div class="contact-grid">
+      <!-- 左：連絡方法 -->
+      <div class="contact-left">
+        <div class="contact-option reveal delay-1">
+          <div class="contact-option-icon">💬</div>
+          <h3>LINEで相談する（最速・簡単）</h3>
+          <p>写真を送るだけで概算見積もりをご返信。電話が苦手な方も大歓迎。一番気軽で早い方法です。</p>
+          <a href="#" class="btn-line-contact">💬 LINEで無料相談する</a>
+        </div>
+        <div class="contact-option reveal delay-2">
+          <div class="contact-option-icon">📞</div>
+          <h3>お電話でのお問い合わせ</h3>
+          <p>急ぎの場合はお電話ください。</p>
+          <div class="contact-phone-num">000-0000-0000</div>
+          <div class="contact-phone-hours">受付時間：8:00〜18:00（年中無休）</div>
+        </div>
+      </div>
+      <!-- 右：フォーム -->
+      <div class="contact-form-card reveal delay-3">
+        <h3>メールフォームで依頼する</h3>
+        <p>内容を入力して送信してください。24時間以内にご連絡します。</p>
+        <form class="form-grid">
+          <div class="form-row-2">
+            <input type="text" class="f-input" placeholder="お名前 *">
+            <input type="tel" class="f-input" placeholder="電話番号 *">
+          </div>
+          <input type="email" class="f-input" placeholder="メールアドレス">
+          <input type="text" class="f-input" placeholder="ご住所・工事場所（市区町村まで）">
+          <select class="f-select f-input">
+            <option value="">ご依頼内容を選んでください</option>
+            <option>コンセント増設・移設</option>
+            <option>エアコン取付・電源工事</option>
+            <option>照明工事・LED化</option>
+            <option>分電盤・ブレーカー交換</option>
+            <option>EV充電設備設置</option>
+            <option>太陽光・蓄電池工事</option>
+            <option>新築・リフォーム電気工事</option>
+            <option>漏電調査・トラブル対応</option>
+            <option>プロテインについて</option>
+            <option>ひらでんツールについて</option>
+            <option>その他</option>
+          </select>
+          <textarea class="f-textarea" placeholder="工事内容の詳細・ご相談内容をご記入ください（任意）"></textarea>
+          <button type="submit" class="form-submit">📋 無料見積もりを依頼する →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">平山電設株式会社</div>
+        <div class="en">HIRADEN / ひらでん</div>
+        <p>徳島県を中心に電気工事歴30年以上のプロフェッショナルが丁寧に対応します。「安心・丁寧・明朗会計」をモットーに、お客様の暮らしと仕事を電気でサポートします。</p>
+        <div class="footer-social">
+          <a href="#" title="YouTube">▶️</a>
+          <a href="#" title="TikTok">🎵</a>
+          <a href="#" title="LINE">💬</a>
+          <a href="#" title="ブログ">📝</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#">コンセント増設・移設</a></li>
+          <li><a href="#">エアコン工事</a></li>
+          <li><a href="#">照明・LED化</a></li>
+          <li><a href="#">分電盤・ブレーカー交換</a></li>
+          <li><a href="#">EV充電設備</a></li>
+          <li><a href="#">太陽光・蓄電池</a></li>
+          <li><a href="#">新築・リフォーム</a></li>
+          <li><a href="#">法人・工場向け工事</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ひらでん</h4>
+        <ul>
+          <li><a href="#">ひらでんツール</a></li>
+          <li><a href="#">プロテイン販売</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li><a href="#">ブログ</a></li>
+          <li><a href="#">note</a></li>
+          <li><a href="#">LINE公式</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">代表プロフィール</a></li>
+          <li><a href="#">施工実績</a></li>
+          <li><a href="#">お客様の声</a></li>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">対応エリア</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 平山電設株式会社 All Rights Reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">サイトマップ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+/* ---- スクロールアニメーション ---- */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+/* ---- ヘッダースクロール制御 ---- */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+// 初期状態
+header.classList.add('scrolled');
+
+/* ---- スムーズスクロール ---- */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ---- FAQ アコーディオン ---- */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = answer.style.maxHeight;
+    // 全部閉じる
+    document.querySelectorAll('.faq-a').forEach(a => {
+      a.style.maxHeight = null;
+      a.style.paddingBottom = '0';
+    });
+    document.querySelectorAll('.faq-item').forEach(i => i.style.borderColor = '');
+    // 対象を開く
+    if (!isOpen || isOpen === '0px') {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      answer.style.paddingBottom = '22px';
+      item.style.borderColor = 'rgba(244,124,32,.4)';
+    }
+  });
+});
+// FAQ初期スタイル
+document.querySelectorAll('.faq-a').forEach(a => {
+  a.style.maxHeight = '0';
+  a.style.overflow = 'hidden';
+  a.style.paddingBottom = '0';
+  a.style.transition = 'max-height .35s ease, padding-bottom .35s ease';
+});
+
+/* ---- サービスタブ（スペルミス修正） ---- */
+// 今後タブ切り替え機能をここに追加可能
+
+</script>
+</body>
+</html>
